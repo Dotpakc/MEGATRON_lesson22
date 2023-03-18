@@ -60,6 +60,8 @@ async def echo(message: types.Message):
         else:
             users_colors[message.from_user.id] = [message.text]
         await message.answer(f'You have chosen {message.text} color')
+    elif message.text.lower() == 'admin':
+        await message.answer(f'You are admin\nYour id: {message.from_user.id}')
     else:
         await message.answer(message.text)
 
